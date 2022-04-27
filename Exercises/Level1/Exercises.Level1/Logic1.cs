@@ -19,7 +19,11 @@ public class Logic1
     /// </summary>
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        throw new NotImplementedException();
+        if (cigars >= 40 && (isWeekend || cigars <= 60))
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -36,7 +40,15 @@ public class Logic1
     /// </summary>
     public int DateFashion(int you, int date)
     {
-        throw new NotImplementedException();
+        if (you <= 2 || date <= 2)
+        {
+            return 0;
+        }
+        if (you >= 8 || date >= 8)
+        {
+            return 2;
+        }
+        return 1;
     }
 
     /// <summary>
@@ -51,7 +63,22 @@ public class Logic1
     /// </summary>
     public bool SquirrelPlay(int temp, bool isSummer)
     {
-        throw new NotImplementedException();
+        if (temp < 60)
+        {
+            return false;
+        }
+
+        int maxTemp = 90;
+
+        if (isSummer)
+        {
+            maxTemp += 10;
+        }
+        if (temp <= maxTemp)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
