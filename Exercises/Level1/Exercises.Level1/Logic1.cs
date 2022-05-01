@@ -94,7 +94,21 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+        int ticketgift = 5;
+        if (isBirthday)
+        {
+            speed -= ticketgift;
+        }
+
+        if (speed <= 60)
+        {
+            return 0;
+        }
+        if (speed >= 81)
+        {
+            return 2;
+        }
+        return 1;
     }
 
     /// <summary>
@@ -107,7 +121,12 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+        if (sum < 10 || sum > 20)
+        {
+            return sum;
+        }
+        return 20;
     }
 
     /// <summary>
@@ -123,7 +142,19 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        //
+        bool isOff = (vacation && (day == 0 || day == 6));
+        if (!vacation && !(day == 0 || day == 6))
+        {
+            return "7:00";
+        }
+        //if (vacation && (day == 0 || day == 6))
+        //else
+        if (isOff)
+        {
+            return "off";
+        }
+        return "10:00";
     }
 
     /// <summary>
@@ -137,7 +168,13 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        bool isGreat = (a == 6 || b == 6 || a + b == 6 || Math.Abs(a - b) == 6);
+        //if (!(a == 6 || b == 6 || a+b == 6 || Math.Abs(a-b) == 6))
+        //{
+        //    return false;
+        //}
+        //return true; 
+        return isGreat;
     }
 
     /// <summary>
@@ -151,7 +188,19 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
+        if (n == 1 || n == 10)
+        {
+            return true;
+        }
+        bool isRange = (n >= 1 && n <= 10);
+        if (outsideMode)
+        {
+            return !isRange;
+        }
+        else
+        {
+            return isRange;
+        }
     }
 
     /// <summary>
@@ -164,7 +213,12 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        int n11 = n % 11;
+        if (n11 == 0 || n11 == 1)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -177,7 +231,12 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        throw new NotImplementedException();
+        int n20 = n % 20;
+        if (n20 == 1 || n20 == 2)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -190,7 +249,13 @@ public class Logic1
     /// </summary>
     public bool Old35(int n)
     {
-        throw new NotImplementedException();
+        int n3 = n % 3;
+        int n5 = n % 5;
+        if (n3 != n5 && (n3 == 0 || n5 == 0))
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -204,7 +269,12 @@ public class Logic1
     /// </summary>
     public bool Less20(int n)
     {
-        throw new NotImplementedException();
+        int n20 = n % 20;
+        if (n20 == 18 || n20 == 19)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -218,7 +288,12 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
-        throw new NotImplementedException();
+        int n10 = num % 10;
+        if (n10 <= 2 || n10 >= 8)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -231,7 +306,11 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+        if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19))
+        {
+            return 19;
+        }
+        return a + b;
     }
 
     /// <summary>
@@ -245,7 +324,19 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        throw new NotImplementedException();
+        if (isAsleep)
+        {
+            return false;
+        }
+        else if (isMom)
+        {
+            return true;
+        }
+        else if (isMorning)
+        {
+            return false;
+        }
+        return true;
     }
 
     /// <summary>
