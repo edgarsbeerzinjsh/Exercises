@@ -352,7 +352,18 @@ public class Logic1
     /// </summary>
     public int TeaParty(int tea, int candy)
     {
-        throw new NotImplementedException();
+        if (tea < 5 || candy < 5)
+        {
+            return 0;
+        }
+        else if (tea >= 2 * candy || candy >= 2 * tea)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
     }
 
     /// <summary>
@@ -366,7 +377,14 @@ public class Logic1
     /// </summary>
     public string FizzString(string str)
     {
-        throw new NotImplementedException();
+        
+        //if (str[0] == "f")
+        //{
+        //    return "Fizz";
+        //}
+        //
+            return str;
+        
     }
 
     /// <summary>
