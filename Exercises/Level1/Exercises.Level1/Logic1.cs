@@ -377,14 +377,25 @@ public class Logic1
     /// </summary>
     public string FizzString(string str)
     {
-        
-        //if (str[0] == "f")
-        //{
-        //    return "Fizz";
-        //}
-        //
-            return str;
-        
+        char str1 = str[0];
+        char strL = str[str.Length - 1];
+        if (str1 == 'f' || strL == 'b')
+        {
+            if (str1 == 'f' && strL == 'b')
+            {
+                return "FizzBuzz";
+            }
+            else if (str1 == 'f')
+            {
+                return "Fizz";
+            }
+            else
+            {
+                return "Buzz";
+            }
+        }
+        return str;
+
     }
 
     /// <summary>
@@ -400,7 +411,21 @@ public class Logic1
     /// </summary>
     public string FizzString2(int n)
     {
-        throw new NotImplementedException();
+        int n3 = n % 3;
+        int n5 = n % 5;
+        if (n3 == 0 && n5 == 0)
+        {
+            return "FizzBuzz!";
+        }
+        if (n3 == 0 && n5 != 0)
+        {
+            return "Fizz!";
+        }
+        else if (n3 != 0 && n5 == 0)
+        {
+            return "Buzz!";
+        }
+        return $"{n}!";
     }
 
     /// <summary>
@@ -412,7 +437,14 @@ public class Logic1
     /// </summary>
     public bool TwoAsOne(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int ab = a + b;
+        int ac = a + c;
+        int bc = b + c;
+        if (ab == c || ac == b || bc == a)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -425,7 +457,19 @@ public class Logic1
     /// </summary>
     public bool InOrder(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (c <= b)
+        {
+            return false;
+        }
+        else if (bOk)
+        {
+            return true;
+        }
+        else if (b > a)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -439,7 +483,15 @@ public class Logic1
     /// </summary>
     public bool InOrderEqual(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (a < b && b < c)
+        {
+            return true;
+        }
+        else if (bOk && a <= b && b <= c)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -453,7 +505,14 @@ public class Logic1
     /// </summary>
     public bool LastDigit(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int adig = a % 10;
+        int bdig = b % 10;
+        int cdig = c % 10;
+        if (adig == bdig || adig == cdig || bdig == cdig)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -466,7 +525,8 @@ public class Logic1
     /// </summary>
     public bool LessBy10(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        bool isLess = Math.Abs(a - b) >= 10 || Math.Abs(b - c) >= 10 || Math.Abs(a - c) >= 10;
+        return isLess;
     }
 
     /// <summary>
@@ -480,7 +540,20 @@ public class Logic1
     /// </summary>
     public int WithoutDoubles(int die1, int die2, bool noDoubles)
     {
-        throw new NotImplementedException();
+        int diesum = die1 + die2;
+        if (noDoubles && die1 == die2)
+        {
+            if (die1 == 6 && die2 == 6)
+            {
+                diesum -= 6;
+            }
+
+            return diesum + 1;
+        }
+        else
+        {
+            return diesum;
+        }
     }
 
     /// <summary>
@@ -495,7 +568,20 @@ public class Logic1
     /// </summary>
     public int MaxMod5(int a, int b)
     {
-        throw new NotImplementedException();
+        int ab = a;
+        if (ab == b)
+        {
+            ab = 0;
+        }
+        else if (ab % 5 == b % 5)
+        {
+            ab = Math.Min(ab, b);
+        }
+        else
+        {
+            ab = Math.Max(ab, b);
+        }
+        return ab;
     }
 
     /// <summary>
@@ -510,7 +596,19 @@ public class Logic1
     /// </summary>
     public int RedTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if (a == b && b == c)
+        {
+            if (a == 2)
+            {
+                return 10;
+            }
+            return 5;
+        }
+        if (a != b && a != c)
+        {
+            return 1;
+        }
+        return 0;
     }
 
     /// <summary>
@@ -524,7 +622,15 @@ public class Logic1
     /// </summary>
     public int GreenTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if (a == b && b == c)
+        {
+            return 20;
+        }
+        if (a == b || b == c || a == c)
+        {
+            return 10;
+        }
+        return 0;
     }
 
     /// <summary>
@@ -539,7 +645,18 @@ public class Logic1
     /// </summary>
     public int BlueTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int ab = a + b;
+        int bc = b + c;
+        int ac = c + a;
+        if (ab == 10 || bc == 10 || ac == 10)
+        {
+            return 10;
+        }
+        if (ab - bc == 10 || ab - ac == 10)
+        {
+            return 5;
+        }
+        return 0;
     }
 
     /// <summary>
@@ -553,7 +670,15 @@ public class Logic1
     /// </summary>
     public bool ShareDigit(int a, int b)
     {
-        throw new NotImplementedException();
+        int a1 = a / 10;
+        int b1 = b / 10;
+        int a2 = a % 10;
+        int b2 = b % 10;
+        if (a1 == b1 || a1 == b2 || a2 == b1 || a2 == b2)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -568,7 +693,14 @@ public class Logic1
     /// </summary>
     public int SumLimit(int a, int b)
     {
-        throw new NotImplementedException();
+        int ab = a + b;
+        int abCh = ab.ToString().Length;
+        int aCh = a.ToString().Length;
+        if (abCh == aCh)
+        {
+            return ab;
+        }
+        return a;
     }
 }
 
