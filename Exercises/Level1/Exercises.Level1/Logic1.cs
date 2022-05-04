@@ -142,19 +142,16 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        //
-        bool isOff = (vacation && (day == 0 || day == 6));
-        if (!vacation && !(day == 0 || day == 6))
+        bool isWeekend = (day == 0 || day == 6);
+        if (vacation || isWeekend)
         {
-            return "7:00";
+            if (vacation && isWeekend)
+            {
+                return "off";
+            }
+            return "10:00";
         }
-        //if (vacation && (day == 0 || day == 6))
-        //else
-        if (isOff)
-        {
-            return "off";
-        }
-        return "10:00";
+        return "7:00";
     }
 
     /// <summary>
@@ -168,13 +165,14 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        bool isGreat = (a == 6 || b == 6 || a + b == 6 || Math.Abs(a - b) == 6);
-        //if (!(a == 6 || b == 6 || a+b == 6 || Math.Abs(a-b) == 6))
-        //{
-        //    return false;
-        //}
-        //return true; 
-        return isGreat;
+        //bool isGreat = (a == 6 || b == 6 || a + b == 6 || Math.Abs(a - b) == 6);
+        //return isGreat;
+
+        if (a == 6 || b == 6 || a + b == 6 || Math.Abs(a - b) == 6)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -324,19 +322,19 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        if (isAsleep)
+        if (!isAsleep)
         {
-            return false;
-        }
-        else if (isMom)
-        {
+            if (isMom)
+            {
+                return true;
+            }
+            else if (isMorning)
+            {
+                return false;
+            }
             return true;
         }
-        else if (isMorning)
-        {
-            return false;
-        }
-        return true;
+        return false;
     }
 
     /// <summary>
@@ -356,14 +354,11 @@ public class Logic1
         {
             return 0;
         }
-        else if (tea >= 2 * candy || candy >= 2 * tea)
+        if (tea >= 2 * candy || candy >= 2 * tea)
         {
             return 2;
         }
-        else
-        {
-            return 1;
-        }
+        return 1;
     }
 
     /// <summary>
@@ -395,7 +390,6 @@ public class Logic1
             }
         }
         return str;
-
     }
 
     /// <summary>
@@ -413,17 +407,17 @@ public class Logic1
     {
         int n3 = n % 3;
         int n5 = n % 5;
-        if (n3 == 0 && n5 == 0)
+        if (n3 == 0 || n5 == 0)
         {
+            if (n5 != 0)
+            {
+                return "Fizz!";
+            }
+            if (n3 != 0)
+            {
+                return "Buzz!";
+            }
             return "FizzBuzz!";
-        }
-        if (n3 == 0 && n5 != 0)
-        {
-            return "Fizz!";
-        }
-        else if (n3 != 0 && n5 == 0)
-        {
-            return "Buzz!";
         }
         return $"{n}!";
     }
@@ -457,17 +451,12 @@ public class Logic1
     /// </summary>
     public bool InOrder(int a, int b, int c, bool bOk)
     {
-        if (c <= b)
+        if (c > b)
         {
-            return false;
-        }
-        else if (bOk)
-        {
-            return true;
-        }
-        else if (b > a)
-        {
-            return true;
+            if (b > a || bOk)
+            {
+                return true;
+            }
         }
         return false;
     }
@@ -483,13 +472,12 @@ public class Logic1
     /// </summary>
     public bool InOrderEqual(int a, int b, int c, bool bOk)
     {
-        if (a < b && b < c)
+        if ((a < b && b < c) || bOk)
         {
-            return true;
-        }
-        else if (bOk && a <= b && b <= c)
-        {
-            return true;
+            if (a <= b && b <= c)
+            {
+                return true;
+            }
         }
         return false;
     }
@@ -703,4 +691,3 @@ public class Logic1
         return a;
     }
 }
-
