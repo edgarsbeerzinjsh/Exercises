@@ -19,7 +19,12 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+        //1. Izgūstam pirmo skaitli masīvā
+        int first = nums[0];
+        //2. Izgūstam pēdējo skaitli masīvā
+        int last = nums[nums.Length - 1];
+        //3. Atgriežam vērtību true
+        return first == 6 || last == 6;
     }
 
     /// <summary>
@@ -32,7 +37,14 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        //1. Ja masīva garums <1 tad atgriežam false
+        if (nums.Length == 0)
+        {
+            return false;
+        }
+        //2. Izgūstam pirmo un pēdējo
+        //3. Pirmais un pēdējais vienāds?
+        return (nums[0] == nums[nums.Length - 1]);
     }
 
     /// <summary>
@@ -42,8 +54,11 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+        //int[] pi = { 3, 1, 4 };
+        //return pi;
+        return new int[] { 3, 1, 4 };
     }
+
 
     /// <summary>
     /// Given 2 arrays of ints, a and b, return true if they have the same first element or they
@@ -55,7 +70,7 @@ public class Array1
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        return a[0] == b[0] || a[a.Length - 1] == b[b.Length - 1];
     }
 
     /// <summary>
@@ -67,7 +82,18 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        //for (int i = 0; i < nums.Length; i++)
+        //{
+        //    sum += nums[i];
+        //}
+        //return sum;
+        foreach (var item in nums)
+        {
+            // Katrā iterācijā pieskaitam vērtību
+            sum += item;
+        }
+        return sum;
     }
 
     /// <summary>
@@ -80,6 +106,22 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
+        //1. Izveidot jaunu masīvu "rotētu"
+        return new int[] { nums[1], nums[2], nums[0] };
+
+        //int [] result = new int[nums.Length];
+        //result[0] = nums[1];
+        //result[1] = nums[2];
+        //result[2] = nums[0];
+        //return result;
+        //2. Ar ciklu, ignorējot cik elementi masīvā
+        //for (int i = 0; i < nums.Length; i++)
+        //{
+        //    if (i == nums.Length - 1)
+        //    {
+
+        //    }
+        //}
         throw new NotImplementedException();
     }
 
