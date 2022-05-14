@@ -88,7 +88,7 @@ public class Array1
         //    sum += nums[i];
         //}
         //return sum;
-        foreach (var item in nums)
+        foreach (int item in nums)
         {
             // Katrā iterācijā pieskaitam vērtību
             sum += item;
@@ -107,7 +107,7 @@ public class Array1
     public int[] RotateLeft3(int[] nums)
     {
         //1. Izveidot jaunu masīvu "rotētu"
-        return new int[] { nums[1], nums[2], nums[0] };
+        //return new int[] { nums[1], nums[2], nums[0] };
 
         //int [] result = new int[nums.Length];
         //result[0] = nums[1];
@@ -115,14 +115,19 @@ public class Array1
         //result[2] = nums[0];
         //return result;
         //2. Ar ciklu, ignorējot cik elementi masīvā
-        //for (int i = 0; i < nums.Length; i++)
-        //{
-        //    if (i == nums.Length - 1)
-        //    {
-
-        //    }
-        //}
-        throw new NotImplementedException();
+        int[] result = new int[nums.Length];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (i == 0)
+            {
+                result[nums.Length - 1] = nums[i];
+            }
+            else
+            {
+                result[i - 1] = nums[i];
+            }
+        }
+        return result;
     }
 
     /// <summary>
@@ -135,7 +140,13 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] result = new int[nums.Length];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int ireverse = nums.Length - 1 - i;
+            result[ireverse] = nums[i];
+        }
+        return result;
     }
 
     /// <summary>
@@ -148,7 +159,20 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        int max = 0;
+        if (nums[0] > nums[nums.Length - 1])
+        {
+            max = nums[0];
+        }
+        else
+        {
+            max = nums[nums.Length - 1];
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = max;
+        }
+        return nums;
     }
 
     /// <summary>
@@ -162,7 +186,21 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        int size = nums.Length;
+        if (size == 0)
+        {
+            return 0;
+        }
+        if (size == 1)
+        {
+            return nums[0];
+        }
+        int sum = 0;
+        for (int i = 0; i < 2; i++)
+        {
+            sum += nums[i];
+        }
+        return sum;
     }
 
     /// <summary>
@@ -175,7 +213,13 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        return new int[] { a[1], b[1] };
+
+        //for (int i = 1; i < a.Length - 1; i++)
+        //{
+
+        //}
+
     }
 
     /// <summary>
