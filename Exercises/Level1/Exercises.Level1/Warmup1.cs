@@ -18,7 +18,7 @@ public class Warmup1
     /// </summary>
     public bool SleepIn(bool weekday, bool vacation)
     {
-        throw new NotImplementedException();
+        return (!weekday || vacation);
     }
 
     /// <summary>
@@ -33,7 +33,7 @@ public class Warmup1
     /// </summary>
     public bool MonkeyTrouble(bool aSmile, bool bSmile)
     {
-        throw new NotImplementedException();
+        return (aSmile == bSmile);
     }
 
     /// <summary>
@@ -46,7 +46,12 @@ public class Warmup1
     /// </summary>
     public int SumDouble(int a, int b)
     {
-        throw new NotImplementedException();
+        int doubleab = 1;
+        if (a == b)
+        {
+            doubleab = 2;
+        }
+        return (a + b) * doubleab;
     }
 
     /// <summary>

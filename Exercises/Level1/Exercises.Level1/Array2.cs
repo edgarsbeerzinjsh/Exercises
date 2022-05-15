@@ -17,7 +17,15 @@ public class Array2
     /// </summary>
     public int CountEvens(int[] nums)
     {
-        throw new NotImplementedException();
+        int even = 0;
+        foreach (int item in nums)
+        {
+            if (item % 2 == 0)
+            {
+                even++;
+            }
+        }
+        return even;
     }
 
     /// <summary>
@@ -31,7 +39,20 @@ public class Array2
     /// </summary>
     public int BigDiff(int[] nums)
     {
-        throw new NotImplementedException();
+        int max = nums[0];
+        int min = max;
+        foreach (int item in nums)
+        {
+            if (item > max)
+            {
+                max = item;
+            }
+            if (item < min)
+            {
+                min = item;
+            }
+        }
+        return max - min;
     }
 
     /// <summary>
@@ -47,7 +68,22 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
-        throw new NotImplementedException();
+        int max = nums[0];
+        int min = max;
+        int sum = 0;
+        foreach (int item in nums)
+        {
+            sum += item;
+            if (item > max)
+            {
+                max = item;
+            }
+            if (item < min)
+            {
+                min = item;
+            }
+        }
+        return (sum - max - min) / (nums.Length - 2);
     }
 
     /// <summary>
@@ -436,6 +472,7 @@ public class Array2
     /// </summary>
     public int[] ZeroMax(int[] nums)
     {
+
         throw new NotImplementedException();
     }
 
