@@ -110,7 +110,7 @@ public class Array2
                 sum += nums[i];
                 continue;
             }
-                     
+
             nums[i] = 0;
             if (i + 1 < nums.Length)
             {
@@ -366,7 +366,20 @@ public class Array2
     /// </summary>
     public bool Either24(int[] nums)
     {
-        throw new NotImplementedException();
+        bool is22 = false;
+        bool is44 = false;
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            if (nums[i] == 2 && nums[i + 1] == 2)
+            {
+                is22 = true;
+            }
+            if (nums[i] == 4 && nums[i + 1] == 4)
+            {
+                is44 = true;
+            }
+        }
+        return (is22 ^ is44);
     }
 
     /// <summary>
@@ -380,7 +393,15 @@ public class Array2
     /// </summary>
     public int MatchUp(int[] nums1, int[] nums2)
     {
-        throw new NotImplementedException();
+        int count = 0;
+        for (int i = 0; i < nums1.Length; i++)
+        {
+            if ((Math.Abs(nums1[i] - nums2[i]) <= 2) && (nums1[i] != nums2[i]))
+            {
+                count += 1;
+            }
+        }
+        return count;
     }
 
     /// <summary>
@@ -393,7 +414,24 @@ public class Array2
     /// </summary>
     public bool Has77(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            if (i + 2 < nums.Length)
+            {
+                if ((nums[i] == 7) && (nums[i + 1] == 7 || nums[i + 2] == 7))
+                {
+                    return true;
+                }
+            }
+            if (i + 2 == nums.Length)
+            {
+                if (nums[i] == 7 && nums[i + 1] == 7)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /// <summary>
