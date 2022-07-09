@@ -26,6 +26,11 @@ public class HalfTriangle
     /// <returns></returns>
     public string[] GetHalfTriangle(int n)
     {
-        throw new NotImplementedException();
+        string[] narray = new string[n];
+        for (int i = 0; i < n; i++)
+        {
+            narray[i] = new string('*', (i * 2) + 1);
+        }
+        return narray;
     }
 }
