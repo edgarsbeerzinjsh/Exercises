@@ -28,6 +28,14 @@ public class Triangle
     /// <returns></returns>
     public string[] GetTRiangle(int n)
     {
-        throw new NotImplementedException();
+        string[] narray = new string[n];
+        for (int i = 0; i < n; i++)
+        {
+            string narray1 = new string(' ', (n - 1 - i));
+            string narray2 = new string('*', (i * 2) + 1);
+
+            narray[i] = narray1 + narray2;
+        }
+        return narray;
     }
 }

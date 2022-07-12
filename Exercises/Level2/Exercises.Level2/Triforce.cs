@@ -41,6 +41,27 @@ public class Triforce
 
     public string[] GetTriforce(int n)
     {
-        throw new NotImplementedException();
+        string[] narray = new string[2 * n];
+        for (int i = 0; i < (2 * n); i++)
+        {
+            if (i < n)
+            {
+                string narray1 = new string(' ', ((2 * n) - 1 - i));
+                string narray2 = new string('*', (i * 2) + 1);
+
+                narray[i] = narray1 + narray2;
+            }
+            else
+            {
+                string narray1 = new string(' ', ((2 * n) - 1 - i));
+                string narray2 = new string('*', ((i - n) * 2) + 1);
+                string narray3 = new string(' ', ((2 * n) - i));
+
+                string narray12 = narray1 + narray2;
+                narray[i] = narray12 + narray3 + narray12;
+            }
+        }
+        return narray;
+
     }
 }
