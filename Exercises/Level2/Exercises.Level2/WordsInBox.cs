@@ -17,6 +17,19 @@ public class WordsInBox
     /// <returns></returns>
     public string[] GetBox(string word)
     {
-        throw new NotImplementedException();
+        string[] boxArray = new string[3];
+        for (int i = 0; i < 3; i++)
+        {
+            if (i != 1)
+            {
+                boxArray[i] = new string('*', word.Length + 4);
+            }
+            else
+            {
+                boxArray[i] = $"* {word} *";
+            }
+        }
+        return boxArray;
     }
 }
+

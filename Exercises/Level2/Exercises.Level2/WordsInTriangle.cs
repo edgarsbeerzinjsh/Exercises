@@ -34,6 +34,20 @@ public class WordsInTriangle
     /// <returns></returns>
     public string[] GetWordInTriangle(string[] words)
     {
-        throw new NotFiniteNumberException();
+        //string[] boxArray = new string[3];
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    if (i != 1)
+        //    {
+        //        boxArray[i] = new string('*', words.Length + 4);
+        //    }
+        //    else
+        //    {
+        //        boxArray[i] = $"* {words} *";
+        //    }
+        //}
+        //return boxArray;
+        throw new NotImplementedException();
+
     }
 }
